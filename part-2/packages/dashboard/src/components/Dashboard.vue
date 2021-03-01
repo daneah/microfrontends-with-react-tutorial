@@ -70,7 +70,6 @@
         </div>
       </div>
     </div>
-
     <div class="p-col-12 p-md-6 p-lg-4">
       <Panel header="Tasks" style="height: 100%">
         <ul class="task-list">
