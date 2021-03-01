@@ -1,4 +1,5 @@
 const { merge } = require('webpack-merge');
+const webpack = require('webpack');
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
 const packageJson = require('../package.json');
 const commonConfig = require('./webpack.common');
@@ -17,6 +18,10 @@ const productionConfig = {
                 './DashboardApp': './src/bootstrap',
             },
             shared: packageJson.dependencies,
+        }),
+        new webpack.DefinePlugin({
+            __VUE_OPTIONS_API__: JSON.stringify(true),
+            __VUE_PROD_DEVTOOLS__: JSON.stringify(false)
         })
     ],
 };
